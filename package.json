@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/ChazizTech/Botr4ppaJS/issues"
   },
-  "homepage": "https://github.com/ChazizTech/Botr4ppaJS#readme"
+  "homepage": "https://github.com/ChazizTech/Botr4ppaJS#readme",
+  "dependencies": {
+    "discord.js": "^12.3.1"
+  }
 }
