@@ -1,6 +1,6 @@
 # Botr4ppaJS
 
-To make a command start the file with this
+This is the command structure below, to make a command put it in the commands folder and name it `commandname.js`
 
 ```js
 module.exports = {
