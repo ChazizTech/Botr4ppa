@@ -1,0 +1,24 @@
+{
+  "name": "botr4ppajs",
+  "version": "0.0.1",
+  "description": "A Discord bot from chaz!zTech",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChazizTech/Botr4ppaJS.git"
+  },
+  "keywords": [
+    "discord",
+    "discord",
+    "bot"
+  ],
+  "author": "Gamerappa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChazizTech/Botr4ppaJS/issues"
+  },
+  "homepage": "https://github.com/ChazizTech/Botr4ppaJS#readme"
+}
