@@ -1,5 +1,5 @@
 const Discord = require('discord.js')
-const { token, prefix } = require('./botsettings.json')
+const { token, prefix, owners } = require('./botsettings.json')
 const fs = require('fs')
 
 const bot = new Discord.Client({disableEveryone: true});
@@ -39,6 +39,11 @@ bot.on('message', msg => {
 
     if (!cooldowns.has(command.name)) {
         cooldowns.set(command.name, new Discord.Collection())
+    }
+
+    if (command.ownerOnly) {
+        var isOwner = owners.includes(msg.author.id) ? true:false
+        if (isOwner == false) return msg.reply("You do not have permission to execute this command!")
     }
 
     const now = Date.now()

@@ -1,4 +1,6 @@
+const { version } = require('../package.json')
 const { prefix } = require('../botsettings')
+const Discord = require('discord.js')
 
 module.exports = {
     name: 'help',
@@ -12,10 +14,16 @@ module.exports = {
 
         if (!args.length) {
             data.push('Here\'s a list of all my commands:')
-            data.push(commands.map(command => command.name).join(', '))
+            data.push(commands.map(command => command.name).join('\n'))
             data.push(`\nYou can send \`${prefix}help [command name]\` to get info on a specific command.`)
 
-            return msg.author.send(data, { split: true })
+            const allCommandsEmbed = new Discord.MessageEmbed()
+            .setAuthor(`Help Command - Botr4ppa`, msg.author.avatarURL({ dynamic: true, size: 256 }))
+            .setColor(msg.guild.me.displayHexColor)
+            .setDescription(data)
+            .setFooter(`Botr4ppa | v${version}`, msg.client.user.avatarURL({ dyamic: true, size: 256 }))
+
+            return msg.author.send(allCommandsEmbed)
                 .then(() => {
                     if (msg.channel.type === 'dm') return;
                     msg.reply("I've sent you a DM with all my commands!")
@@ -38,6 +46,12 @@ module.exports = {
 
         data.push(`**Cooldown:** ${command.cooldown || 3} second(s)`)
 
-        msg.channel.send(data, { split: true })
+        const commandInfo = new Discord.MessageEmbed()
+        .setAuthor(`Help Command - Botr4ppa`, msg.author.avatarURL({ dynamic: true, size: 256 }))
+        .setColor('#7289da')
+        .setDescription(data)
+        .setFooter(`Botr4ppa | v${version}`, msg.client.user.avatarURL({ dyamic: true, size: 256 }))
+
+        msg.channel.send(commandInfo)
     },
 }

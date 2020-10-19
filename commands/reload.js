@@ -3,6 +3,7 @@ module.exports = {
     description: 'Reloads a command',
     aliases: ['rel'],
     args: true,
+    ownerOnly: true,
     execute(msg, args) {
         const commandName = args[0].toLowerCase()
         const command = msg.client.commands.get(commandName)
