@@ -26,7 +26,7 @@ bot.on('message', msg => {
     const command = bot.commands.get(commandName)
         || bot.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName))
 
-    if (command.guildOnly && msg.channel.type === 'dm') return msg.reply('I can\'t execute this command in DMs!')
+    if (command.guildOnly && message.channel.type === 'dm') return message.reply('I can\'t run that command inside DMs!');
 
     if (command.args && !args.length) {
         let reply = `You didn't provide any arguments!`
