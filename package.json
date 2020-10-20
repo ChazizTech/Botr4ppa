@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/ChazizTech/Botr4ppaJS#readme",
   "dependencies": {
+    "beautiful-logs.js": "^0.10.1",
     "discord.js": "^12.4.0"
   }
 }
