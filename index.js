@@ -1,6 +1,7 @@
 const Discord = require('discord.js')
 const { token, prefix, owners, cake } = require('./botsettings.json')
 const fs = require('fs')
+const logger = require("beautiful-logs.js")
 
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection()
@@ -14,7 +15,7 @@ for(const file of commandFiles) {
 }
 
 bot.once('ready', () => {
-    console.log('Botr4ppa is online and is ready!')
+    logger.boot('Botr4ppa is online and is ready!')
     bot.user.setPresence({
         activity: { name: `for commands in ${bot.guilds.cache.size} servers | b4!`, type: 'WATCHING' },
         status: 'dnd'
@@ -71,8 +72,9 @@ bot.on('message', msg => {
 
     try {
         command.execute(msg, args)
+        logger.command(`${msg.author.tag} (${msg.author.id}) has used command ${command.name} in ${msg.guild.name}`)
     } catch (error) {
-        console.error(error)
+        logger.err(error)
         msg.reply('There was an error while executing the command.')
     }
 })
