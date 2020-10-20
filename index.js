@@ -16,7 +16,7 @@ for(const file of commandFiles) {
 bot.once('ready', () => {
     console.log('Botr4ppa is online and is ready!')
     bot.user.setPresence({
-        activity: { name: `for commands in ${bot.guilds.cache.size} servers | b4!,` type: 'WATCHING' },
+        activity: { name: `for commands in ${bot.guilds.cache.size} servers | b4!`, type: 'WATCHING' },
         status: 'dnd'
     })
 }); 
