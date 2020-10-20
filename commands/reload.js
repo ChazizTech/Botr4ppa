@@ -3,7 +3,7 @@ const logger = require('beautiful-logs.js')
 module.exports = {
     name: 'reload',
     description: 'Reloads a command',
-    aliases: ['rel'],
+    aliases: ['rel', 'refresh'],
     args: true,
     ownerOnly: true,
     execute(msg, args) {

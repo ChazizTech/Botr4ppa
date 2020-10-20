@@ -1,6 +1,7 @@
 const { version } = require('../package.json')
 const { prefix } = require('../botsettings')
 const Discord = require('discord.js')
+const logger = require('beautiful-logs.js')
 
 module.exports = {
     name: 'help',
@@ -13,7 +14,7 @@ module.exports = {
         const { commands } = msg.client
 
         if (!args.length) {
-            data.push('Here\'s a list of all my commands:')
+			data.push('Here\'s a list of all my commands:')
             data.push(commands.map(command => command.name).join('\n'))
             data.push(`\nYou can send \`${prefix}help [command name]\` to get info on a specific command.`)
 
@@ -26,7 +27,7 @@ module.exports = {
             return msg.author.send(allCommandsEmbed)
                 .then(() => {
                     if (msg.channel.type === 'dm') return;
-                    msg.reply("I've sent you a DM with all my commands!")
+                    msg.reply("I've sent you a DM with all my commands!");
                 })
                 .catch(error => {
                     console.error(`Couldn't send help DM to ${msg.author.tag}.\n`, error)
