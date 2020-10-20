@@ -12,7 +12,7 @@ module.exports = {
         var patt = new RegExp("token");
         var res = patt.test(str);
     
-        if(res === true) return msg.reply("I'm not givin' that shit out!")
+        if(res === true) return msg.reply("Invalid.")
     
         try {
             var code = args.join(" ");
