@@ -17,7 +17,7 @@ module.exports = {
             const newCommand = require(`./${command.name}.js`)
             msg.client.commands.set(newCommand.name, newCommand)
             msg.channel.send(`Command \`${command.name}\` was reloaded!`)
-			console.log('Botr4ppa command reloaded: ${command.name}')
+	    console.log(`Botr4ppa command reloaded: ${command.name}`)
         } catch (error) {
             console.error(error)
             msg.reply(`There was an error while reloading a command \`${command.name}\`:\n\`${error.message}\``)
