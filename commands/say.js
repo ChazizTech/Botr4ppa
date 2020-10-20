@@ -1,8 +1,16 @@
 const Discord = require('discord.js')
 
-exports.run = function(bot, message, args){
-    const embed = new Discord.RichEmbed()
-    .setTitle(args.join(" "))
-    .setColor(message.guild.me.displayHexColor)
-    message.channel.send({embed, embed})
+module.exports = {
+    name: 'say',
+    description: 'Will make the bot say what you want it to say.',
+    usage: '<message>',
+    args: true,
+    guildOnly: true,
+    execute(msg, args) {
+        const embed = new Discord.MessageEmbed()
+        .setDescription(args.join(" "))
+        .setColor(msg.guild.me.displayHexColor)
+
+        msg.channel.send(embed)
+    },
 }
