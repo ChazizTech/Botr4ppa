@@ -10,8 +10,8 @@ module.exports = {
     execute(msg, args) {
         let sentmessage = args.splice(1).join(' ');
         let user = msg.mentions.users.first();
-        if (msg.mentions.users.size < 1) return msg.channel.sendMessage("You must mention the user you are going to message.").catch(console.error);
-        if (msg.length < 1) return msg.channel.sendMessage('Please enter a message.');
+        if (msg.mentions.users.size < 1) return msg.channel.send("You must mention the user you are going to message.").catch(console.error);
+        if (msg.length < 1) return msg.channel.send('Please enter a message.');
         const embed = new Discord.MessageEmbed()
         .setAuthor("You have been sent a message!", msg.author.avatarURL)
         .setDescription(`${msg.author.tag} has sent you a private message!`)

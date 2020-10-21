@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 
 module.exports = {
     name: 'eval',
-    description: 'Executes javascript code. **OWNER ONLY**',
+    description: 'Executes javascript code.',
     usage: '<code>',
     args: true,
     guildOnly: true,
