@@ -79,4 +79,14 @@ bot.on('message', msg => {
     }
 })
 
+bot.on('guildCreate', guild => {
+    const guildInfo = {"id":`${guild.id}`,"modlogid": "undefined"}
+    const data = JSON.stringify(guildInfo)
+
+    try {
+        fs.writeFileSync('serversettings.json', data)
+        logger.info("Guild settings created!")
+    } catch (error) { logger.err(error) }
+})
+
 bot.login(token)

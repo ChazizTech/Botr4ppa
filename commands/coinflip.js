@@ -8,7 +8,7 @@ module.exports = {
     execute(msg) {
         const flipOptions = ['Heads', 'Tails']
         const flipEmbed = new Discord.MessageEmbed()
-        .setAuthor(`🎱 Your answer is: ${flipOptions[Math.floor(Math.random() * 2)]}`, msg.author.avatarURL({ dyamic: true, size: 256 }))
+        .setAuthor(`🟤 The coin has flipped to: ${flipOptions[Math.floor(Math.random() * 2)]}`, msg.author.avatarURL({ dyamic: true, size: 256 }))
         .setColor(msg.guild.me.displayHexColor)
 
         msg.channel.send(flipEmbed)
