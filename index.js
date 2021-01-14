@@ -1,5 +1,6 @@
 const Discord = require('discord.js')
-const { token, prefix, owners, cake } = require('./botsettings.json')
+const { prefix, owners, cake } = require('./botsettings.json')
+const { token } = require('./token.json')
 const fs = require('fs')
 const logger = require("beautiful-logs.js")
 
