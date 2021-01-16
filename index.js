@@ -16,10 +16,10 @@ for(const file of commandFiles) {
 }
 
 bot.once('ready', () => {
-    logger.boot('Botr4ppa is online and is ready!')
-    bot.user.setPresence({
-        activity: { name: `for commands in ${bot.guilds.cache.size} servers | b4!`, type: 'WATCHING' },
-        status: 'dnd'
+    logger.boot('Botr4ppa.js is now online.')
+    bot.user.setPresence({ //this is what i found to be the best status.
+        activity: { name: `for b4! | ${bot.guilds.cache.size} servers`, type: 'WATCHING' },
+        status: 'idle'
     })
 }); 
 
