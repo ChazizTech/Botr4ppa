@@ -21,7 +21,7 @@ module.exports = {
             const allCommandsEmbed = new Discord.MessageEmbed()
             .setAuthor(`Help Command - Botr4ppa`, msg.author.avatarURL({ dynamic: true, size: 256 }))
             .setColor(msg.guild.me.displayHexColor)
-            .setDescription(data)
+            .setDescription("Fuck you cub porn devs")
             .setFooter(`Botr4ppa | v${version}`, msg.client.user.avatarURL({ dyamic: true, size: 256 }))
 
             return msg.author.send(allCommandsEmbed)

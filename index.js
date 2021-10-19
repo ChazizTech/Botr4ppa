@@ -4,7 +4,7 @@ const { token } = require('./token.json')
 const fs = require('fs')
 const logger = require("beautiful-logs.js")
 
-const bot = new Discord.Client({ intents: [Discord.Intents.FLAGS.GUILDS] });
+const bot = new Discord.Client({ intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.DIRECT_MESSAGES, Discord.Intents.FLAGS.GUILD_MEMBERS, Discord.Intents.FLAGS.GUILD_MESSAGES] });
 bot.commands = new Discord.Collection()
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'))
@@ -18,7 +18,7 @@ for(const file of commandFiles) {
 bot.once('ready', () => {
     logger.boot('Botrappa is now online.')
     bot.user.setPresence({ //this is what i found to be the best status.
-        activity: { name: `for b4! | ${bot.guilds.cache.size} servers`, type: 'WATCHING' },
+        activity: { name: `for br! | ${bot.guilds.cache.size} servers`, type: 'WATCHING' },
         status: 'idle'
     })
 }); 
